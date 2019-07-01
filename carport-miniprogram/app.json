@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/authorizel/authorizel",
+    "pages/index/index",
+    "pages/indent/indent",
+    "pages/personalCenter/personalCenter",
+    "pages/personalCenter/personalDetails/personalDetails",
+    "pages/personalCenter/indentList/indentList",
+    "pages/personalCenter/myFavorite/myFavorite",
+    "pages/personalCenter/inviteFriends/inviteFriends",
+    "pages/index/buyCarport/buyCarport",
+    "pages/index/buyCarport/carportParticulars/carportParticulars",
+    "pages/index/buyCarport/carportParticulars/placeAnOrder/placeAnOrder",
+    "pages/index/paymentSuccess/paymentSuccess",
+    "pages/index/openInvoice/openInvoice",
+    "pages/index/invoiceHint/invoiceHint"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#35BD67",
+    "navigationBarTitleText": "彩车位",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FFF",
+    "enablePullDownRefresh": true,
+    "pageOrientation": "auto"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#35BD67",
+    "list": [
+      {
+        "selectedIconPath": "./images/indexon.png",
+        "iconPath": "./images/indexoff.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "./images/indenton.png",
+        "iconPath": "./images/indentoff.png",
+        "pagePath": "pages/indent/indent",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "./images/personalon.png",
+        "iconPath": "./images/personaloff.png",
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

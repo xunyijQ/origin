@@ -1,0 +1,150 @@
+.container{
+ width:100%
+}
+.slide-image{
+  width:100%;
+  height:400rpx;
+}
+.service-carport-box{
+  background-color: #fff;
+  width:100%;
+}
+.service-carport-message{
+  width:100%
+}
+.service-message{
+  margin:20rpx;
+  border-bottom:1px solid #e5e5e5
+}
+.service-project{
+  font-size:36rpx;
+  font-weight: 600;
+  color:#000;
+  float:left;
+}
+.service-address{
+  font-size:26rpx;
+  color:#b7ab95;
+  float:right;
+
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.service-address-text{
+  font-size: 26rpx;
+  color:#999;
+}
+.detailed-address{
+  color:#7ab9e1;
+  font-size: 26rpx;
+  margin-left:10rpx;
+}
+.service-carport{
+  margin-bottom: 20rpx;
+  font-size:34rpx;
+  color:#333;
+  display: inline-block;
+}
+.soldout-icon,.unsold-icon{
+  float: left;
+  font-size:34rpx;
+  color:#cbc1b6;
+  display:table-cell;
+  vertical-align:middle;
+}
+.soldout-icon{
+  margin-left:60rpx;
+}
+.text-unsold{
+  width:36rpx;
+  height:36rpx;
+  border-radius: 10rpx;
+  border:1px solid #000;
+  background-color:white; 
+  display: inline-block;
+  vertical-align:middle;
+}
+.text-soldout{
+  width:36rpx;
+  height:36rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  background-color: red;
+  vertical-align:middle;
+}
+.text-con{
+  line-height: 36rpx；
+}
+.service-type{
+  margin-left:20rpx;
+}
+.service-carport-distribution{
+  background-color: #f2f2f2;
+  width:100%;
+}
+.service-carport-distribution-box{
+  margin:20rpx;
+  padding:20rpx 0;
+}
+.distribution-title{
+  width:100%;
+  background-color: #cce3ed;
+  color:#319ed5;
+  height:80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.warning-icon{
+  width:30rpx;
+  height:30rpx;
+  vertical-align:middle;
+  margin-right: 20rpx;
+}
+.distribution-image{
+  padding:10rpx 0;
+  vertical-align:middle;
+  font-size:22rpx;
+  color:#b8babd;
+}
+.carport-box{
+   width:49rpx;
+  height:50rpx;
+  border:1px solid #000;
+  background-color:white; 
+  text-align: center;
+  line-height: 50rpx;
+  float:left;
+  color: #000;
+  font-size:24rpx;
+  border-radius: 6rpx;
+  margin-right:20rpx;
+  margin-bottom: 10rpx;
+}
+.carport-box1{
+   width:49rpx;
+  height:50rpx;
+  border:1px solid #000;
+  background-color:red; 
+  text-align: center;
+  line-height: 50rpx;
+  float:left;
+  color: white;
+  font-size:24rpx;
+  border-radius: 6rpx;
+  margin-right:20rpx;
+  margin-bottom: 10rpx;
+}
+.distribution-floor{
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.carport-all{
+  
+}

@@ -1,0 +1,15 @@
+<view class="container">
+		<view class="service-list">
+			<navigator class="service-item" wx:for="{{itemList}}" wx:key="{{index}}" url="">
+				<view class="service-img">
+					<image src="{{item.icon}}" ></image>
+				</view>
+				<view class="service-text">
+					<view class="service-tite">下单时间：{{item.placeAnOrderTime}}</view>
+					<view class="service-tite">支付时间：{{item.payTime}}</view>
+					<text class="service-city">成交金额：{{item.makeABargain}}W</text>
+				</view>
+			</navigator>
+		</view>
+		<view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+</view>

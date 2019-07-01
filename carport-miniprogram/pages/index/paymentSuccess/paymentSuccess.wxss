@@ -1,0 +1,61 @@
+@import "../buyCarport/carportParticulars/placeAnOrder/placeAnOrder.wxss";
+.orderStatus{
+  background-color:white;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.service-carprot1{
+   width:100%;
+    background-color:#fff;
+    margin-bottom: 20rpx;
+}
+.orderStatus view{
+  padding:20rpx 0 10rpx 0;
+}
+.orderStatus-type{
+  font-size:32rpx;
+  font-weight: 600;
+  color:#000;
+}
+.transaction-money,.order-money{
+  font-size:28rpx;
+  color:#a8b7c6;
+}
+.order-money{
+  margin-bottom: 20rpx;
+}
+.transaction-num,.order-num{
+  font-size:28rpx;
+  color:#333;
+  margin-left:30rpx;
+}
+.m-l{
+  margin-left:20rpx;
+}
+.f-w{
+  font-weight: 800
+}
+.border_top:last-child{
+  border-bottom: .5px solid #eee;
+}
+.look-order,.open-invoice{
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.look-order{
+  color: white;
+  background-color: #333333;
+  margin-bottom: 10rpx;
+  margin-top: 80rpx;
+}
+.open-invoice{
+  color: #333333;
+  background-color: white;
+  border:0.5rpx solid #333;
+  border-radius: 6rpx;
+  
+}

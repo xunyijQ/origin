@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="index_head">
+    <view class="service_title">
+      <view class="search">
+        <view class="df search_arr">
+          <input placeholder="输入城市/小区/楼盘等" name="keyword" value="{{keyword}}" style="margin-left:52rpx" placeholder-style="" bindconfirm="searchSubmit" />
+          <image src="../../images/search.png" class="searchcion"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='recommend_content'>
+      <view class='service_headline'>
+        <text>精品推荐</text>
+      </view>
+      
+    </view>
+    <view class='service_list'>
+        <view class="service-item" wx:for="{{itemList}}" wx:key="{{index}}">
+          <view class="service-img">
+            <image src="{{item.icon}}"></image>
+          </view>
+          <view class="service-text">
+            <view class="service-tite">{{item.Community}} <text class='service-coupon'> 返￥{{item.coupon}}</text></view>
+            <view class="service-city">{{item.address}}</view>
+            <text class="service-title">{{item.price}}<text class='service-price'>均价</text></text>
+            <view class='service-btn-choose' bindtap="navigateTo" data-id="{{item.id}}">选车位</view>
+          </view>
+        </view>
+      </view>
+  </view>
+
+</view>

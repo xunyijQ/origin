@@ -1,0 +1,52 @@
+@import "../buyCarport.wxss";
+.particulars-carport{
+  margin:20rpx;
+}
+.particulars-title{
+  padding-bottom: 10rpx;
+  font-weight: 600;
+  font-size: 32rpx;
+  color:#000;
+}
+.text-l{
+  float:left;
+  display: flex;
+  font-size:30rpx;
+  color:#666;
+  align-items: center;
+}
+.text-r{
+  float:right;
+  color:#666;
+  font-size:30rpx;
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.border-b{
+  border-bottom: 1px solid #eee;
+  padding:20rpx 0;
+}
+.particulars-buy{
+  width:100%;
+  background-color: #333333;
+  color:white;
+  height:80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  margin-top:80rpx;
+  margin-bottom: 10rpx;
+}
+.particulars-tips{
+  text-align: center;
+}
+.particulars-nav{
+  font-size:20rpx;
+  color:#66b0ee;
+}

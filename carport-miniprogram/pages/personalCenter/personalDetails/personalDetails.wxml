@@ -1,0 +1,10 @@
+<view class='from_box'>
+  <form>
+    <view class='clearfix border_bottom' wx:for='{{itemList}}' wx:key='{{index}}'>
+      <view class='view_box'>
+        <view class='fl '>{{item.name}}</view>
+        <input class='fr l'  placeholder="" value="{{item.value==''?'':item.value}}"/>
+      </view>
+    </view>
+  </form>
+</view>

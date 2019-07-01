@@ -1,0 +1,87 @@
+<view class='container'>
+  <view class="container-content">
+    <form>
+      <view class='service-user'>
+        <view class='service-user-common'>
+          <view class='service-user-title'>客户信息</view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl  type-1'>
+                <text class="red">*</text>姓名</view>
+              <input class='fr l' placeholder="请填写本人真实姓名" placeholder-class="phClass"/>
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl  type-1'>
+                <text class="red">*</text>手机号码</view>
+              <input class='fr l' maxlength="11" placeholder="请填写11位手机号码" placeholder-class="phClass"/>
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl  type-1'>
+                <text class="red">*</text>身份真号码</view>
+              <input class='fr l' maxlength="18" placeholder="请填写本人身份证号码"  placeholder-class="phClass"/>
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl  type-1'>
+                <text class="red"></text>OA</view>
+              <input class='fr l' maxlength="18" placeholder="非必填(彩之云员工填写项)" placeholder-class="phClass" />
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl type-1'>
+                <text class="red">*</text>楼栋</view>
+              <input class='fr l' placeholder="请选择" placeholder-class="phClass" />
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='fl type-1'>
+                <text class="red">*</text>房间号</view>
+              <input class='fr l' placeholder="请选择" placeholder-class="phClass" />
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+      <view class='service-carprot'>
+        <view class='service-user-common'>
+           <view class='service-user-title'>车位信息</view>
+           <view class='clearfix border_top' wx:for="{{carport}}" wx:key="{{index}}">
+            <view class='view_box'>
+              <view class='text-l'>{{item.name}}</view>
+              <view class='text-r'>{{item.value}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="service-pay">
+        <view class='service-user-common'>
+         <view class='service-user-title'>交易信息</view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='text-l'>支付金额</view>
+              <view class='text-r'>100000</view>
+            </view>
+          </view>
+          <view class='clearfix border_top'>
+            <view class='view_box'>
+              <view class='text-l'>电子合同</view>
+              <view class='text-r'>查看<icon ></icon></view>
+            </view>
+          </view>
+          <view class='sibmitPay' bindtap="goToPay">
+            立即支付
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+
+</view>

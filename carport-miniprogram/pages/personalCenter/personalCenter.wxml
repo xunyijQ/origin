@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="bg-title">
+    <view class="user">
+      <image src="{{user.avatarUrl}}" class="user-pic"></image>
+      <text class="user-name">{{user.nickName}}</text>
+    </view>
+    <image  class="user-bg"></image>
+  </view>
+  
+  <view>
+    <view class="platform-box">
+      <view class="platform-share demo clearfix" wx:for='{{itemList}}' wx:key='{{index}}'>
+          <navigator url="{{item.url}}">
+            <view class="text-l">
+              <view>
+                <image  class="vip-icon" style="" src='{{item.l_icon}}'></image>
+                <text class="vip-text" style="">{{item.name}}</text>
+              </view>
+            </view>
+            <view class="text-r">
+              <view class="skip_ico"><image src="{{item.r_icon}}"></image></view>
+            </view>
+            </navigator>
+      </view>
+    </view>
+  </view>
+</view>

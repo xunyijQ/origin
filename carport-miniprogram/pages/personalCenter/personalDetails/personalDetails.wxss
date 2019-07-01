@@ -1,0 +1,34 @@
+
+.fr{
+  float:right
+}
+.fl{
+  float:left
+}
+.c{
+  text-align: center
+}
+.l{
+  text-align: left
+}
+.r{
+  text-align: right
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.from_box{
+  background: #FFF;
+  box-sizing: content-box;
+  padding:1rem
+}
+.border_bottom{
+  border-bottom: 1px solid #eee;
+}
+.view_box{
+  padding:1rem 0.5rem 1rem 0.5rem
+}

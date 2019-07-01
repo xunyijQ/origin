@@ -1,0 +1,173 @@
+<view class='container'>
+
+  <view class='swiper-title'>
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">全部</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">已支付</view>
+      <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">待支付</view>
+      <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">待评价</view>
+      <view class="swiper-tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">退款售后</view>
+    </view>
+  </view>
+
+
+  <swiper current="{{currentTab}}" duration="600" bindchange="swiperTab" style="height:{{widHeight}}" class='swiper-box'>
+    <swiper-item>
+      <view class='indent-box' wx:for="{{list1}}" wx:key="{{index}}">
+        <block >
+          <navigator hover-class="none" url="../index/buyCarport/carportParticulars/carportParticulars?id={{item.id}}&type={{item.typeNumber}}" >
+            <view class='indent-content'>
+              <view class='indent-list'>
+                <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:120px;border-bottom: 1px solid #DBDBDB'>
+                  <!--左边图片-->
+                  <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+                    <image class='index-logo' style='width:128rpx; height:128rpx' src="{{item.images}}"></image>
+                  </view>
+                  <!-- 右边内容 上下结构 -->
+                  <view style='display:flex; flex-direction:column; margin:20rpx;'>
+                    <label class='item_title'>{{item.name}}</label>
+                    <view style='display:flex; flex-direction:row; height:80rpx;'>
+                      <label class='item_content'>{{item.orderTime}}</label>
+                      <label class='{{item.typeNumber==1?"item_type":"item_type1"}}'>{{item.type}}</label>
+                    </view>
+                    <!-- 右边底部内容 左右结构 -->
+                    <view style='display:flex; flex-direction:row; height:40rpx;'>
+                      <label class='item_from'>{{item.price}}</label>
+                      <label class='item_time' bindtap="goToOpenInvoice">开具发票</label>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+
+    </swiper-item>
+    <swiper-item>
+      <view class='indent-box' wx:for="{{list2}}" wx:key="{{index}}">
+        <block>
+          <navigator hover-class="none" url="../index/buyCarport/carportParticulars/carportParticulars?id={{item.id}}&type={{item.typeNumber}}">
+            <view class='indent-content'>
+              <view class='indent-list'>
+                <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:120px;border-bottom: 1px solid #DBDBDB'>
+                  <!--左边图片-->
+                  <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+                    <image class='index-logo' style='width:128rpx; height:128rpx' src="{{item.images}}"></image>
+                  </view>
+                  <!-- 右边内容 上下结构 -->
+                  <view style='display:flex; flex-direction:column; margin:20rpx;'>
+                    <label class='item_title'>{{item.name}}</label>
+                    <view style='display:flex; flex-direction:row; height:80rpx;'>
+                      <label class='item_content'>{{item.orderTime}}</label>
+                      <label class='{{item.typeNumber==1?"item_type":"item_type1"}}'>{{item.type}}</label>
+                    </view>
+                    <!-- 右边底部内容 左右结构 -->
+                    <view style='display:flex; flex-direction:row; height:40rpx;'>
+                      <label class='item_from'>{{item.price}}</label>
+                      <label class='item_time'>开具发票</label>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </swiper-item>
+     <swiper-item>
+      <view class='indent-box' wx:for="{{list3}}" wx:key="{{index}}">
+        <block>
+          <navigator hover-class="none" url="../index/buyCarport/carportParticulars/carportParticulars?id={{item.id}}&type={{item.typeNumber}}">
+            <view class='indent-content'>
+              <view class='indent-list'>
+                <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:120px;border-bottom: 1px solid #DBDBDB'>
+                  <!--左边图片-->
+                  <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+                    <image class='index-logo' style='width:128rpx; height:128rpx' src="{{item.images}}"></image>
+                  </view>
+                  <!-- 右边内容 上下结构 -->
+                  <view style='display:flex; flex-direction:column; margin:20rpx;'>
+                    <label class='item_title'>{{item.name}}</label>
+                    <view style='display:flex; flex-direction:row; height:80rpx;'>
+                      <label class='item_content'>{{item.orderTime}}</label>
+                      <label class='{{item.typeNumber==1?"item_type":"item_type1"}}'>{{item.type}}</label>
+                    </view>
+                    <!-- 右边底部内容 左右结构 -->
+                    <view style='display:flex; flex-direction:row; height:40rpx;'>
+                      <label class='item_from'>{{item.price}}</label>
+                      <label class='item_time'>开具发票</label>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </swiper-item>
+     <swiper-item>
+      <view class='indent-box' wx:for="{{list4}}" wx:key="{{index}}">
+        <block>
+          <navigator hover-class="none" url="../index/buyCarport/carportParticulars/carportParticulars?id={{item.id}}&type={{item.typeNumber}}">
+            <view class='indent-content'>
+              <view class='indent-list'>
+                <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:120px;border-bottom: 1px solid #DBDBDB'>
+                  <!--左边图片-->
+                  <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+                    <image class='index-logo' style='width:128rpx; height:128rpx' src="{{item.images}}"></image>
+                  </view>
+                  <!-- 右边内容 上下结构 -->
+                  <view style='display:flex; flex-direction:column; margin:20rpx;'>
+                    <label class='item_title'>{{item.name}}</label>
+                    <view style='display:flex; flex-direction:row; height:80rpx;'>
+                      <label class='item_content'>{{item.orderTime}}</label>
+                      <label class='{{item.typeNumber==1?"item_type":"item_type1"}}'>{{item.type}}</label>
+                    </view>
+                    <!-- 右边底部内容 左右结构 -->
+                    <view style='display:flex; flex-direction:row; height:40rpx;'>
+                      <label class='item_from'>{{item.price}}</label>
+                      <label class='item_time'>开具发票</label>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </swiper-item>
+     <swiper-item>
+      <view class='indent-box' wx:for="{{list5}}" wx:key="{{index}}">
+        <block>
+          <navigator hover-class="none" url="../index/buyCarport/carportParticulars/carportParticulars?id={{item.id}}&type={{item.typeNumber}}">
+            <view class='indent-content'>
+              <view class='indent-list'>
+                <view hover-class='hover-class' id="{{item.id}}" style='display:flex; height:120px;border-bottom: 1px solid #DBDBDB'>
+                  <!--左边图片-->
+                  <view style='width:128rpx; height:128rpx; margin:20rpx;'>
+                    <image class='index-logo' style='width:128rpx; height:128rpx' src="{{item.images}}"></image>
+                  </view>
+                  <!-- 右边内容 上下结构 -->
+                  <view style='display:flex; flex-direction:column; margin:20rpx;'>
+                    <label class='item_title'>{{item.name}}</label>
+                    <view style='display:flex; flex-direction:row; height:80rpx;'>
+                      <label class='item_content'>{{item.orderTime}}</label>
+                      <label class='{{item.typeNumber==1?"item_type":"item_type1"}}'>{{item.type}}</label>
+                    </view>
+                    <!-- 右边底部内容 左右结构 -->
+                    <view style='display:flex; flex-direction:row; height:40rpx;'>
+                      <label class='item_from'>{{item.price}}</label>
+                      <label class='item_time'>开具发票</label>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>

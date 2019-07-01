@@ -1,0 +1,60 @@
+<view class="container">
+  <view class='service-banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" bindload='imageLoad' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='service-carport-box'>
+    <view class='service-carport-message'>
+      <view class='service-message'>
+        <view class='the-project-address clearfix'>
+          <text class='service-project '>惠州花样年家天下</text>
+          <text class='service-address '>广东惠州</text>
+        </view>
+        <view>
+          <text class='service-address-text'>地址</text>
+          <text class='detailed-address'>广东省深圳市龙岗区花样年家天下</text>
+        </view>
+        <view>
+          <text class='service-carport'>选购车位</text>
+        </view>
+      </view>
+    </view>
+    <view class='service-type clearfix'>
+      <view class='unsold-icon'>
+        <text class='text-unsold'></text>
+        <text class='text-con'>可选</text>
+
+      </view>
+      <view class='soldout-icon'>
+        <text class='text-soldout'></text>
+        <text class='text-con'>已售</text>
+      </view>
+    </view>
+  </view>
+  <view class='service-carport-distribution'>
+    <view class='service-carport-distribution-box'>
+      <view class='distribution-title'>车位分布图</view>
+      <view class='distribution-image'>
+        <image src='../../../images/warning.png' class='warning-icon'> </image>可查看车位分布图确定车位编号
+      </view>
+      <view class='distribution-chart'>
+        <view class='distribution-floor'>
+          负一层
+        </view>
+        <view>
+
+          <view class='clearfix'>
+            <view wx:for='{{list}}' wx:key='{{index}}'class='carport-all'>
+              <view class='{{item.type==0?"carport-box":"carport-box1"}}' data-id="{{item.id}}" bindtap="{{'goToParticulars'}}">{{item.number}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

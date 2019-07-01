@@ -1,0 +1,341 @@
+<!--pages/square/square.wxml-->
+
+
+<view wx:if="{{show==3}}">
+  <view wx-if="{{index==1}}">
+    <view wx-if="{{0}}" class='flexRow sx' style='height:72rpx;font-size:32rpx;text-align:center;border:1px solid'>
+      <view class='flexGrow1'>
+        <text>科目</text>
+      </view>
+      <view class='flexGrow1' style='position:relative'>
+        <text style='line-height:70rpx; height:70rpx;display:inline-block;border-bottom:3px solid #35bd67'>时间</text>
+        <view class='flexColumn' style='position:absolute;width:100%;'>
+          <text>所有</text>
+          <text>最新</text>
+          <text>最热</text>
+        </view>
+      </view>
+      <view class='flexGrow1'>
+        <text>价格</text>
+      </view>
+    </view>
+    <view style='height:2040rpx'>
+      <view style='height:40rpx;background:#fafafa'></view>
+      <view style=''>
+        <view style='padding:20rpx 40rpx'>
+          <view class='imgTop' data-index='0' bindtap='tapTo'>
+            <image class='imgCon' src="{{img1}}" />
+          </view>
+          <view class="title">小船送信</view>
+          <view class="teacher">大律司</view>
+          <view>
+            <view class="money">免费</view>
+            <view class="date">2018-04-03 15:04:38</view>
+          </view>
+        </view>
+
+        <view class='hengCon'>
+          <view class='heng'></view>
+        </view>
+
+        <view style='padding:20rpx 40rpx'>
+          <view class='imgTop' data-index='1' bindtap='tapTo'>
+            <image class='imgCon' src="{{img2}}" />
+          </view>
+          <view class="title">三个强盗</view>
+          <view class="teacher">大律司</view>
+          <view>
+            <view class="money">免费</view>
+            <view class="date">2018-04-03 15:04:29</view>
+          </view>
+        </view>
+
+        <view class='hengCon'>
+          <view class='heng'></view>
+        </view>
+
+
+        <view style='padding:20rpx 40rpx'>
+          <view class='imgTop' data-index='2' bindtap='tapTo'>
+            <image class='imgCon' src="{{img3}}" />
+          </view>
+          <view class="title">长高的秘诀</view>
+          <view class="teacher">王老师分享</view>
+          <view>
+            <view class="money">免费</view>
+            <view class="date">2018-04-03 15:04:23</view>
+          </view>
+        </view>
+      </view>
+      <view style='height:20px;background:#fafafa;margin-top:20px;'></view>
+    </view>
+  </view>
+  <view wx-if="{{index==2}}">
+    <view style="height:480rpx;background:#35bd67;background-size:contain;background-position:bottom;overflow:hidden;">
+      <view style='text-align:center;color:white;padding-top:20px;'>
+        <image style='width:150rpx;height:150rpx;border-radius:150rpx' src="{{avatarUrl}}" />
+        <view>
+          {{nickName}}
+        </view>
+      </view>
+      <image style='height:250rpx;width:100%;' src="../../images/homepage/background.png" />
+    </view>
+    <view style='height:40rpx;background:#fafafa'></view>
+    <view class='flexRow' bindtap='switchTab'>
+      <image style='height:50rpx;width:50rpx;padding-left:30rpx;padding-right:20rpx;' src='../../images/homepage/my_list_icon_small_bill.png' />
+      <view style='text-align:left;' class='flexGrow6 lh'>
+        我的账单
+      </view>
+      <view class='flexGrow1 lh'>
+        <image style='height:24rpx;width:16rpx;' src='../../images/homepage/global_icon_list_arrow.png' />
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+
+<view wx:if="{{show==1}}" class="connotation">
+  <view class="headerbox">
+    <view class="headerbar" bindtap="tapHeaderBar">
+      <span class="citysell">{{city}}</span>
+      <image src="../../images/down.png" class="cityTab"></image>
+    </view>
+    <view class="search">
+          <view class="df search_arr">
+            <input placeholder="搜索课程/行业/专家" name="keyword" value="{{keyword}}" style="margin-left:52rpx" placeholder-style="color: #90DAAC;font-size:22rpx;！important" bindconfirm ="searchSubmit" />
+            <image src="../../images/search.png" class="searchcion"></image>
+          </view>
+    </view>
+  </view>
+  <!--headerbox end-->
+  <swiper class="swiper_banner" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" indicator-dots="{{dots}}" indicator-color="{{dotcolor}}"
+    indicator-active-color="{{selectcolor}}">
+    <block wx:for="{{banners}}" wx:key="*this">
+      <swiper-item>
+        <image class="bg_picture" src="{{item.img}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--swiper_banner end-->
+  <view class="subjects">
+    <scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true">
+      <block wx:for="{{subjects}}" wx:key="*this">
+        <view class="scroll-view-item_H subject">
+          <navigator url="/pages/homepage/preview/preview?subject={{item.code}}" >{{item.name}}</navigator>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <!--subjects end-->
+  <view class="modulebox">
+    <view name="live">
+      <view class="connot" style="padding-bottom:15rpx">
+        <view class="connot_live">
+          <view class="live_title demo clearfix">
+            <text class="main_body">每日推荐</text>
+            <navigator class="main_tips" url="/pages/homepage/preview/preview">更多 ></navigator>
+          </view>
+        </view>
+      </view>
+      <view class="demo clearfix">
+        <view wx:for="{{dayType}}" class="{{index%2==0?'live_l':'live_r'}}" wx:key="{{item._id}}" bindtap="{{item.courseid?'tocha':'zhiboClick'}}" data-directid="{{item.direct_id}}"  data-item="{{item}}">
+          <view class="live_l_particulars">
+            <view wx:if="{{item.courseid}}">
+                <view class="live_module">
+                  <image src="{{item.poster==''?'../../images/default_course.png':item.poster}}" class="live_pic_l"></image>
+                  <view class="{{item.price>0?'live_pay':'live_pay1'}}">{{item.price>0?"￥"+item.price:"免费"}}</view>
+                </view>
+            </view>
+            <view wx:if="{{item.direct_id}}">
+                  <view class="live_module">
+                    <image src="{{item.poster==''?'../../images/default_live.png':item.poster}}" class="live_pic_l" style="padding:0;margin:0"></image>
+                    <view class="live_title_tips">
+                      <image src="../../images/time.png" class="live_icon"></image>
+                      <text wx:if="{{item.status==3}}">直播已结束</text>
+                      <text wx:elif="{{item.c<0}}">直播未开始</text>
+                      <text wx:else>{{item.c>0?"倒计时:"+item.allHour:"直播进行中"}}</text>
+                    </view>
+                    <view class="live_suspend" hidden='{{item.poster?false:true}}'>
+                      <image src="../../images/suspend.png" class="suspend"></image>
+                    </view>
+                    <view class="{{item.live_price>0?'live_pay':'live_pay1'}}">{{item.live_price>0?"￥"+item.live_price:"免费"}}</view>
+                  </view>
+            </view>
+            <view class="live_tips">
+              <text class="live_text">{{item.title}}</text>
+            </view>
+            <view class="live_foot">
+              <image src="../../images/sale.png" class="live_sale"></image>
+              <text class="live_sale_text">已售{{item.sales}}人</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--每日推荐 end-->
+    <view wx:for="{{typeList}}" >
+      <view>
+        <view class="connot" style="padding-bottom:15rpx">
+          <view class="connot_live">
+            <view class="live_title demo clearfix">
+              <text class="main_body">{{item.name=='律师服务'?'网上律师行':item.name}}</text>
+              <navigator class="main_tips" url="/pages/homepage/preview/preview?subject={{item.code}}">更多 ></navigator>
+            </view>
+          </view>
+        </view>
+        <view class="demo clearfix">
+          <view wx:for="{{item.objData}}" class="{{index%2==0?'live_l':'live_r'}}" wx:key="{{item._id}}" bindtap="{{item.courseid?'tocha':'zhiboClick'}}" data-directid="{{item.direct_id}}" data-item="{{item}}">
+            <view class="live_l_particulars">
+              <view wx:if="{{item.courseid}}">
+                <view class="live_module">
+                  <image src="{{item.poster==''?'../../images/default_course.png':item.poster}}" class="live_pic_l"></image>
+                  <view class="{{item.price>0?'live_pay':'live_pay1'}}">{{item.price>0?"￥"+item.price:"免费"}}</view>
+                </view>
+              </view>
+              <!--course end-->
+              <view wx:if="{{item.direct_id}}">
+                    <view class="live_module">
+                                <image src="{{item.poster==''?'../../images/default_live.png':item.poster}}" class="live_pic_l" style="padding:0;margin:0"></image>
+                                <view class="live_title_tips" >
+                                  <image src="../../images/time.png" class="live_icon"></image>
+                                  <text wx:if="{{item.status==3}}">直播已结束</text>
+                                  <text wx:elif="{{item.c<0}}">直播未开始</text>
+                                  <text wx:else>{{item.c>0?"倒计时:"+item.allHour:"直播进行中"}}</text>
+                                </view>
+                                <view class="live_suspend" hidden='{{item.poster?false:true}}'>
+                                  <image src="../../images/suspend.png" class="suspend"></image>
+                                </view>
+                                <view class="{{item.live_price>0?'live_pay':'live_pay1'}}">{{item.live_price>0?"￥"+item.live_price:"免费"}}</view>
+                    </view>
+                  </view>
+                 <!--live end--> 
+                    <view class="live_tips">
+                      <text class="live_text">{{item.title}}</text>
+                    </view>
+                    <view class="live_foot">
+                      <image src="../../images/sale.png" class="live_sale"></image>
+                      <text class="live_sale_text">已售{{item.sales}}人</text>
+                    </view>
+              </view>   
+          </view>
+        </view>
+      </view>
+    </view>
+    
+
+    <view name="aceexperts">
+      <view class="connot" style="padding-bottom:15rpx">
+        <view class="connot_live">
+          <view class="live_title demo clearfix">
+            <text class="main_body">王牌专家</text>
+            <navigator class="main_tips" url=""></navigator>
+          </view>
+        </view>
+      </view>
+      <view class="aceexperts">
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:309px" bindchange="bindChange" indicator-color="#E8EBE9" indicator-dots="{{indicatorDots}}" indicator-active-color="#35BD67">
+          <block class='aceexperts_theme' wx:for="{{contentlist}}" wx:key="{{contentlist}}">
+            <swiper-item>
+              <navigator class="aceexperts_data" url="{{'/pages/homepage/specialist/specialist?teacher_id='+item.to_uid}}" wx:for="{{specialist}}" wx:key="{{item._id}}" data-id="{{item.to_uid}}">
+                <image src='{{item.avatar==""?"../../images/defaultimg.png":item.avatar}}' class="aceexperts_head"></image>
+                <view class="aceexperts_name">
+                  {{item.to_nickname}}
+                </view>
+                <view class="aceexperts_type"> {{item.subjectName}} </view>
+              </navigator>
+
+              <view class="swiper-item {{item}}"></view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view name="live">
+      <view class="connot" style="padding-bottom:15rpx">
+        <view class="connot_live">
+          <view class="live_title demo clearfix">
+            <text class="main_body">免费推荐</text>
+            <navigator class="main_tips" url="/pages/homepage/preview/preview?free=1">更多 ></navigator>
+          </view>
+        </view>
+      </view>
+      <view class="demo clearfix">
+        <view wx:for="{{freeType}}" class="{{index%2==0?'live_l':'live_r'}}" wx:key="{{item._id}}" bindtap="{{item.courseid?'tocha':'zhiboClick'}}" data-directid="{{item.direct_id}}" data-item="{{item}}">
+          <view class="live_l_particulars">
+            
+              <view wx:if="{{item.courseid}}">
+                <view class="live_module">
+                  <image src="{{item.poster==''?'../../images/default_course.png':item.poster}}" class="live_pic_l"></image>
+                  <view class="{{item.price>0?'live_pay':'live_pay1'}}">{{item.price>0?"￥"+item.price:"免费"}}</view>
+                </view>
+              </view>
+              <!--course end-->
+              <view wx:if="{{item.direct_id}}">
+                    <view class="live_module">
+                                <image src="{{item.poster==''?'../../images/default_live.png':item.poster}}" class="live_pic_l" style="padding:0;margin:0"></image>
+                                <view class="live_title_tips" >
+                                  <image src="../../images/time.png" class="live_icon"></image>
+                                  <text wx:if="{{item.status==3}}">直播已结束</text>
+                                  <text wx:elif="{{item.c<0}}">直播未开始</text>
+                                  <text wx:else>{{item.c>0?"倒计时:"+item.allHour:"直播进行中"}}</text>
+                                </view>
+                                <view class="live_suspend">
+                                  <image src="../../images/suspend.png" class="suspend"></image>
+                                </view>
+                                <view class="{{item.live_price?'live_pay':'live_pay1'}}">{{item.live_price>0?"￥"+item.live_price:"免费"}}</view>
+                    </view>
+                </view>
+                 <!--live end--> 
+                <view class="live_tips">
+                  <text class="live_text">{{item.title}}</text>
+                </view>
+                <view class="live_foot">
+                  <image src="../../images/sale.png" class="live_sale"></image>
+                  <text class="live_sale_text">已售{{item.sales}}人</text>
+                </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+<view wx:if="{{show==2}}">
+  <view class="searchLetter touchClass">
+    <view class="thishotText" bindtap="hotCity">
+      <view style="margin-top:0;">当前</view>
+      <view style="margin-top:0;">热门</view>
+    </view>
+    <view wx:for="{{searchLetter}}" style="color:#2ab4ff;font-size:20rpx;" wx:key="index" data-letter="{{item.name}}" catchtouchend="clickLetter">{{item.name}}</view>
+  </view>
+  <block wx:if="{{isShowLetter}}">
+    <view class="showSlectedLetter">
+      {{showLetter}}
+    </view>
+  </block>
+  <scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}" class="cityAll" bindtap="cityAll">
+    <view class="hotcity-common thisCity">当前选择城市</view>
+    <view class="thisCityName">{{city}}</view>
+    <view>
+      <text class="hotcity hotcity-common">热门城市</text>
+      <view class="weui-grids">
+        <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
+          <view class="weui-grid" data-cityCode="{{item.cityCode}}" data-city="{{item.city}}" bindtap="bindHotCity">
+            <view class="weui-grid__label">{{item.city}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+      <view class="item_letter" id="{{item.initial}}">{{item.initial}}</view>
+      <view class="item_city" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" data-cityCode="{{ct.code}}" data-city="{{ct.city}}" bindtap="bindCity">
+        {{ct.city}}
+      </view>
+    </view>
+  </scroll-view>
+</view>

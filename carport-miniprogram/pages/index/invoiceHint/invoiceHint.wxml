@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class="orderStatus">
+    <view class='tips-container'>
+      <view>
+        <icon type="success" size="40" />
+      </view>
+      <view class='orderStatus-type'>您已成功添加发票信息</view>
+      <view class='tips-message'>
+        <view>电子版发票已发送到您邮箱</view>
+        <view>感谢您的支持！</view>
+      </view>
+    </view>
+    <view class="service-user-common">
+      <navigator open-type='switchTab' class="look-order" url='../../index/index'>返回首页</navigator>
+    </view>
+  </view>
+</view>

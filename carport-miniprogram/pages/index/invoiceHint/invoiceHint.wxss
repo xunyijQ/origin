@@ -1,0 +1,10 @@
+@import "../buyCarport/carportParticulars/placeAnOrder/placeAnOrder.wxss";
+@import "../paymentSuccess/paymentSuccess.wxss";
+.tips-container{
+  margin: 0 10rpx;
+}
+.tips-message{
+  background-color:#f2f2f2 ;
+  text-align: center; 
+  margin-top:60rpx;
+}

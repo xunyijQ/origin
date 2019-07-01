@@ -1,0 +1,117 @@
+<view class='container1'>
+  <view class='swiper-title'>
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">个人</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">公司</view>
+    </view>
+  </view>
+
+
+  <swiper current="{{currentTab}}" duration="600" bindchange="swiperTab" style="height:{{height}}">
+    <swiper-item>
+      <view>
+        <form bindsubmit="getInvoice">
+          <view class='service-user-common winHeight'>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>姓名</view>
+                <input class='fr l' placeholder="请填写本人真实姓名" placeholder-class="phClass" bindinput='getMessage' data-id='1'/>
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>手机号码</view>
+                <input class='fr l' maxlength="11" placeholder="请填写11位手机号码" placeholder-class="phClass" bindinput='getMessage' data-id='2'/>
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>身份真号码</view>
+                <input class='fr l' maxlength="18" placeholder="请填写本人身份证号码" placeholder-class="phClass" bindinput='getMessage' data-id='3'/>
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>
+                  地址</view>
+                <input class='fr l' maxlength="18" placeholder="非必填(彩之云员工填写项)" placeholder-class="phClass" bindinput='getMessage' data-id='4'/>
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl type-1'>发送电子发票</view>
+                <switch bindchange="switch1Change" bindinput='getMessage' data-id='5'/>
+              </view>
+            </view>
+          </view>
+        </form>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view>
+        <form>
+          <view class='service-user-common winHeight1'>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>公司名称</view>
+                <input class='fr l' placeholder="请输入公司名称" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>税号</view>
+                <input class='fr l' maxlength="20" placeholder="请输入公司税号" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>地址</view>
+                <input class='fr l' maxlength="18" placeholder="请输入公司地址" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>
+                  电话</view>
+                <input class='fr l' maxlength="18" placeholder="请输入公司电话" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>
+                  开户银行</view>
+                <input class='fr l' maxlength="18" placeholder="请输入公司开户银行" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>
+                  银行账户</view>
+                <input class='fr l' maxlength="18" placeholder="请输入公司银行账户" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl  type-1'>
+                  备注</view>
+                <input class='fr l' maxlength="18" placeholder="若无可跳过" placeholder-class="phClass" />
+              </view>
+            </view>
+            <view class='clearfix border_top'>
+              <view class='view_box'>
+                <view class='fl type-1'>发送电子发票</view>
+                <switch bindchange="switch1Change" />
+                <input class='fr l' placeholder="请输入邮箱接收电子发票" placeholder-class="phClass" />
+              </view>
+            </view>
+          </view>
+        </form>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class='invoice-btn'>
+    <view class='look-order' bindtap="goToPreserve">保存</view>
+    <view class='open-invoice' bindtap="goToOpen">开票</view>
+  </view>
+
+</view>

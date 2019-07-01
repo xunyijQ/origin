@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class="orderStatus">
+    <view ><icon type="success" size="40" /></view>
+    <view class='orderStatus-type'>支付成功</view>
+    <view class='transaction-money'>交易金额<text class='transaction-num'>￥200000</text>
+    </view>
+    <view class="order-money">订单金额<text class='order-num'>￥180000</text>
+    </view>
+  </view>
+  <view class='service-carprot1'>
+    <view class='service-user-common'>
+      <view class='service-user-title'>支付信息</view>
+      <view class='clearfix border_top' wx:for='{{list}}' wx:key='{{index}}'>
+        <view class='view_box'>
+          <view class='text-l'>{{item.name}}</view>
+          <view class='text-l m-l f-w'>{{item.text}}</view>
+          <view class='text-r'>{{item.value}}</view>
+        </view>
+      </view>
+      <navigator open-type='switchTab' class="look-order" url='../../indent/indent'>查看订单</navigator>
+      <view class='open-invoice' bindtap="goToInvoice">开具发票</view>
+    </view>
+  </view>
+</view>
